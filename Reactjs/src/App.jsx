@@ -223,6 +223,11 @@
 
 // export default App
 
+
+
+  // day 2 Learning --> pg for the data fetching using axios and useEffect hook in reactjs
+
+
 // import axios from "axios";
 // import { useEffect, useState } from "react";
 
@@ -276,3 +281,37 @@
 // };
 
 // export default App;
+
+// ---------------------React Router Dom----------------------------
+
+
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import About from './pages/About1'
+import Home from './pages/Home1'
+import Product from './pages/Product1'
+import Contact from './pages/Contact1'
+import Header from './components/Header'
+
+
+const App = () => {
+  return (
+ 
+    <div>
+        <Header/>
+      {/* //creating Routes */}
+      <Routes>//Routes is used to define the routes for the application
+   
+      <Route path='/' element={<Home/>} />
+          <Route  path='/about'  element={<About/>}/>
+      <Route path='/product' element={<Product/>} />
+      <Route path='/contact' element={<Contact/>} />
+     
+      </Routes> 
+
+    </div>
+  )
+}
+
+export default App
+
