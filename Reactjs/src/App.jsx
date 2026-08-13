@@ -223,10 +223,7 @@
 
 // export default App
 
-
-
-  // day 2 Learning --> pg for the data fetching using axios and useEffect hook in reactjs
-
+// day 2 Learning --> pg for the data fetching using axios and useEffect hook in reactjs
 
 // import axios from "axios";
 // import { useEffect, useState } from "react";
@@ -284,34 +281,55 @@
 
 // ---------------------React Router Dom----------------------------
 
+// import React from 'react'
+// import { Route, Routes } from 'react-router-dom'
+// import About from './pages/About1'
+// import Home from './pages/Home1'
+// import Product from './pages/Product1'
+// import Contact from './pages/Contact1'
+// import Header from './components/Header'
 
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import About from './pages/About1'
-import Home from './pages/Home1'
-import Product from './pages/Product1'
-import Contact from './pages/Contact1'
-import Header from './components/Header'
+// const App = () => {
+//   return (
 
+//     <div>
+//         <Header/>
+//       {/* //creating Routes */}
+//       <Routes>//Routes is used to define the routes for the application
+
+//       <Route path='/' element={<Home/>} />
+//           <Route  path='/about'  element={<About/>}/>
+//       <Route path='/product' element={<Product/>} />
+//       <Route path='/contact' element={<Contact/>} />
+
+//       </Routes>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+// ----------------React Context API-----------------------------
+
+import React, { useContext } from "react";
+import Section from "./comp2/Section3";
+import Footer from "./comp2/Footer1";
+import Header from "./comp2/Header1";
+import { DataContext } from "./context/UserContext";
 
 const App = () => {
+  //useContext is the hook used to receiver the context
+  const data = useContext(DataContext);
+  console.log(data);
   return (
- 
     <div>
-        <Header/>
-      {/* //creating Routes */}
-      <Routes>//Routes is used to define the routes for the application
-   
-      <Route path='/' element={<Home/>} />
-          <Route  path='/about'  element={<About/>}/>
-      <Route path='/product' element={<Product/>} />
-      <Route path='/contact' element={<Contact/>} />
-     
-      </Routes> 
-
+      <h1>This is App {data.username}</h1>
+      <Header />
+      <Section />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
-
+export default App;
